@@ -68,9 +68,6 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }else { text1Int--; }
                 text1.setText("" + text1Int);
-
-
-
             }
         });
 
