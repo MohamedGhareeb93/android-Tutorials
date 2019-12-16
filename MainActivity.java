@@ -17,12 +17,13 @@ public class MainActivity extends AppCompatActivity {
     Stack<Integer> undoNumber;
     Stack<Integer> undoKey;
 
+    
     public static int text1Int = 0;
     public static int text2Int = 0;
+    
     TextView text1;
     TextView text2;
-    TextView text3;
-
+    
     Button button1Increase;
     Button button1Decrease;
     Button Button2Increase;
