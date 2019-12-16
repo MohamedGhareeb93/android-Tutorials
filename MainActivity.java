@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     Stack<Integer> undoInt;
     Stack<Integer> undoKey;
 
-    
     public static int text1Int = 0;
     public static int text2Int = 0;
     
