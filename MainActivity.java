@@ -46,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
         button1Increase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                undoNumber.push(text1Int);
-                undoKey.push(1);
+                undoNumber.push(text1Int);  // push var  into the stack
+                undoKey.push(1);    // push key into the stack
 
                 text1Int++;
                 text1.setText("" + text1Int);
@@ -58,8 +58,8 @@ public class MainActivity extends AppCompatActivity {
         button1Decrease.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                undoNumber.push(text1Int); // push var  into the stack
-                undoKey.push(1); // push key into the stack
+                undoNumber.push(text1Int); 
+                undoKey.push(1); 
 
                 if(text1Int == 0) {
                     return;
