@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
                 if(!undoNumber.isEmpty()) {
                     if (undoKey.peek() == 1) { // checks if the undoKey first elements is equal to 1 without removing the key
                         undoKey.pop(); // remove the key
-                        text1Int = (int) undoNumber.pop(); // set integer to the last stack elemet
+                        text1Int = (int) undoNumber.pop(); // set integer to the last stack element
                         text1.setText("" + text1Int); // change the text
                     } else if (undoKey.peek() == 2) {
                         undoKey.pop();
@@ -119,58 +119,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
-
-
-/**
-    public int  undoManager () { // CALL THE METHOD ON EVERY CLICK. MOVE TO ONCLICK
-
-        int getStack = 0;
-        undo.push(undoManager.peek());
-
-        if(!undoManager.isEmpty()) {
-            getStack = (int) undoManager.peek();
-        }
-        //for(int index = 0; index < undo.size(); index++)
-
-        return getStack;
-    }
-
-    public int undo() {
-
-        int getStack = undoManager();
-
-        return 0;
-
-    }
-
-    public int redo() { // CALL THE METHOD ON EVERY CLICK. MOVE TO ONCLICK
-
-        return 0;
-    }
-
-    /**
-     * @param command  define the order of Clicked
-     * @param history define the information
-     * @param key the key of the varaible
-     * @param seen is Variables is being modeifyed.
-    public int undo(int command, int history, int key, boolean seen) {
-
-        int gethistory;
-
-        switch (command) {
-            case 1:
-                if (key == 1) {
-                    if (seen == true) {
-
-                    }
-                }
-                break;
-        }
-
-
-        return 0;
-    }*/
 
 
 }
