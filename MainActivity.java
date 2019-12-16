@@ -12,9 +12,12 @@ import java.util.Stack;
 
 public class MainActivity extends AppCompatActivity {
 
-
-    //Stack<Integer> undo ;
-    Stack<Integer> undoNumber;
+    /**
+    2 main Stacks 
+    undoInt store the int  return&remove when undo Button is Clicked.
+    undoKey - each int has a special Key. 
+    */
+    Stack<Integer> undoInt;
     Stack<Integer> undoKey;
 
     
@@ -36,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //undo = new Stack<Integer>();
-        undoNumber = new Stack<Integer>();
+        undoInt = new Stack<Integer>();
         undoKey = new Stack<Integer>();
 
           text1 = (TextView) findViewById(R.id.textView_1);
@@ -47,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         button1Increase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                undoNumber.push(text1Int);  // push var  into the stack
+                undoInt.push(text1Int);  // push var  into the stack
                 undoKey.push(1);    // push key into the stack
 
                 text1Int++;
@@ -59,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         button1Decrease.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                undoNumber.push(text1Int); 
+                undoInt.push(text1Int); 
                 undoKey.push(1); 
 
                 if(text1Int == 0) {
@@ -76,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         Button2Increase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                undoNumber.push(text2Int);
+                undoInt.push(text2Int);
                 undoKey.push(2);
 
                 text2Int++;
@@ -88,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         Button2Decrease.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                undoNumber.push(text2Int);
+                undoInt.push(text2Int);
                 undoKey.push(2);
 
                 if(text2Int == 0) {
@@ -104,14 +107,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(!undoNumber.isEmpty()) {
+                if(!undoInt.isEmpty()) { // checks if NOT undoInt Stack empty
                     if (undoKey.peek() == 1) { // checks if the undoKey first elements is equal to 1 without removing the key
                         undoKey.pop(); // remove the key
-                        text1Int = (int) undoNumber.pop(); // set integer to the last stack element
+                        text1Int = (int) undoInt.pop(); // set integer to the stack element and remove from stack.
                         text1.setText("" + text1Int); // change the text
                     } else if (undoKey.peek() == 2) {
                         undoKey.pop();
-                        text2Int = (int) undoNumber.pop();
+                        text2Int = (int) undoInt.pop();
                         text2.setText("" + text2Int);
                     }
                 }
