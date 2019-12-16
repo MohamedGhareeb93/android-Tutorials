@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //undo = new Stack<Integer>();
         undoInt = new Stack<Integer>();
         undoKey = new Stack<Integer>();
 
